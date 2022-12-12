@@ -14,7 +14,7 @@ class Guide:
     input2: str
 
     @staticmethod
-    def parse_strategy(s):
+    def parse_guide(s):
         input1, input2 = s.split()
         return Guide(input1, input2)
     
@@ -95,7 +95,7 @@ class Score:
 
 if __name__ == "__main__":
     # example
-    guides = [Guide.parse_strategy(s) for s in raw.splitlines()]
+    guides = [Guide.parse_guide(s) for s in raw.splitlines()]
     score = Score(score1=0, score2=0)
     for guide in guides:
         score.calc_score1(guide=guide)
@@ -107,7 +107,7 @@ if __name__ == "__main__":
     # task
     with open("./data/day02.txt") as f:
         raw = f.read()
-    guides = [Guide.parse_strategy(s) for s in raw.splitlines()]
+    guides = [Guide.parse_guide(s) for s in raw.splitlines()]
     score = Score(score1=0, score2=0)
     for guide in guides:
         score.calc_score1(guide=guide)
